@@ -113,17 +113,8 @@ export default function Achievements() {
   }, [selected, nextModal, prevModal, autoSlide]);
 
   return (
-    <main className={`${dark ? "bg-[#1a1a1a] text-white" : "bg-white text-black"} min-h-screen transition duration-300`}>
-      {/* Theme Toggle */}
-      <div className="absolute top-5 right-5 flex items-center gap-4">
-        <button
-          onClick={() => setDark(!dark)}
-          className="bg-gray-300 dark:bg-gray-800 p-2 rounded-full transition"
-          title="Toggle theme"
-        >
-          {dark ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </div>
+    <main >
+     
 
       {/* Header */}
       <section className="py-12 border-b border-[#e6c173] bg-gradient-to-r from-[#fff8e1] to-white dark:from-[#2a2a2a] dark:to-[#1a1a1a]">
@@ -227,10 +218,7 @@ export default function Achievements() {
         )}
       </AnimatePresence>
 
-      {/* Footer */}
-      <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 mt-12">
-        © {new Date().getFullYear()} NSS Unit. All rights reserved.
-      </footer>
+     
     </main>
   );
 }

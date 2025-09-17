@@ -46,13 +46,7 @@ export default function Activities() {
         details: `Programs to educate communities on health, environment, and social issues.`,
         images: [awareness1, awareness2, awareness3, awareness4, awareness5],
       },
-      {
-        title: "Initiatives for College Development",
-        desc:
-          "NSS volunteers contribute to a cleaner, greener, and better college environment. Activities include cleanliness drives, tree planting, wall painting, and assisting in campus events. These initiatives foster responsibility, teamwork, and pride in maintaining the institution’s infrastructure.",
-        details: `Activities to improve and maintain the college environment.`,
-        images: [college1, college2, college3],
-      },
+      
       {
         title: "Annual 7-Day Camp",
         desc:

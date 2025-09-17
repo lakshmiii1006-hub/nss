@@ -8,6 +8,9 @@ import bg1 from "../assets/bg1.jpeg";
 import bg2 from "../assets/bg2.jpeg";
 import bg3 from "../assets/bg3.jpeg";
 import bg4 from "../assets/bg4.jpeg";
+import bg5 from "../assets/nss.jpeg";
+import bg6 from "../assets/nss1.jpeg";
+import bg7 from "../assets/nss2.jpeg";
 
 
 export default function Home() {
@@ -162,9 +165,9 @@ export default function Home() {
         </h3>
         <div className="grid md:grid-cols-3 gap-8 text-center">
           {[
-            { number: "120+", label: "Active Volunteers" },
-            { number: "25+", label: "Events Organized" },
-            { number: "3", label: "Villages Adopted" },
+            { number: "200+", label: "Active Volunteers" },
+            { number: "20+", label: "Events Organized" },
+            { number: "5+", label: "Villages Adopted" },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -194,19 +197,19 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              img: bg2,
-              title: "Community Service",
-              desc: "Students engaged in local community initiatives and awareness programs.",
+              img: bg5,
+             title: "Yuva nidhi Drive", 
+             desc: "Special Drive for Yuva Nidhi.",
             },
             {
-              img: bg3,
-              title: "Health Camp",
-              desc: "Organizing medical camps to promote health and hygiene in villages.",
+              img: bg6,
+              title: "College Cleaning Activity", 
+              desc: "Helping the community with service activities.",
             },
             {
-              img: bg4,
-              title: "Tree Plantation",
-              desc: "Volunteers contributing to environmental sustainability and greenery.",
+              img: bg7,
+              title: "Library day", 
+              desc: "Attending World library day at Ambedkar Bhavan.",
             },
           ].map((item, index) => (
             <motion.div

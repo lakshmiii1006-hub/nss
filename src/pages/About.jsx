@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { HeartHandshake, Globe, BadgeInfo, Star, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import cleaning from "../assets/cleaning1.jpeg";
+import cleaning1 from "../assets/nss15.jpeg";
 import bgAbout from "../assets/bg2.jpeg";
 import historyImg from "../assets/nss4.jpeg";
 import nssLogo from "../assets/NSS-logo.png"; // NSS logo
-
+import cleaning from "../assets/nss14.jpeg";
 export default function About() {
   const navigate = useNavigate();
 
@@ -307,7 +307,7 @@ export default function About() {
         >
           <motion.div variants={imageVariants} className="flex justify-center">
             <img
-              src={cleaning} // replace with your activities image
+              src={cleaning1} // replace with your activities image
               alt="NSS Activities"
               className="rounded-2xl shadow-lg object-cover w-full max-w-sm md:max-w-md max-h-72"
             />
