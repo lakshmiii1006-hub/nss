@@ -3,14 +3,14 @@ import { Eye, Target, HeartHandshake } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/NSS-logo.png";
-import bg1 from "../assets/bg1.jpeg";
-import bg2 from "../assets/bg2.jpeg";
-import bg3 from "../assets/bg3.jpeg";
-import bg4 from "../assets/bg4.jpeg";
-import bg5 from "../assets/nss.jpeg";
-import bg6 from "../assets/nss1.jpeg";
-import bg7 from "../assets/nss2.jpeg";
+import logo from "../assets/Assets/NSS-logo.png";
+import bg1 from "../assets/Assets/bg1.jpeg";
+import bg2 from "../assets/Assets/bg2.jpeg";
+import bg3 from "../assets/Assets/bg3.jpeg";
+import bg4 from "../assets/Assets/bg4.jpeg";
+import bg5 from "../assets/Assets/nss.jpeg";
+import bg6 from "../assets/Assets/nss1.jpeg";
+import bg7 from "../assets/Assets/nss2.jpeg";
 
 
 export default function Home() {

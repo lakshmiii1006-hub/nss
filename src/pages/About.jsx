@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { HeartHandshake, Globe, BadgeInfo, Star, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import cleaning1 from "../assets/nss15.jpeg";
-import bgAbout from "../assets/bg2.jpeg";
-import historyImg from "../assets/nss4.jpeg";
-import nssLogo from "../assets/NSS-logo.png"; // NSS logo
-import cleaning from "../assets/nss14.jpeg";
+import cleaning1 from "../assets/Assets/nss15.jpeg";
+import bgAbout from "../assets/Assets/bg2.jpeg";
+import historyImg from "../assets/Assets/nss28.jpeg";
+import nssLogo from "../assets/Assets/NSS-logo.png"; // NSS logo
+import cleaning from "../assets/Assets/nss14.jpeg";
 export default function About() {
   const navigate = useNavigate();
 

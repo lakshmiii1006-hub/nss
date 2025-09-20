@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import images from src/assets/Assets
+import nssImg from "../assets/Assets/nss.jpeg";
+import nss1Img from "../assets/Assets/nss1.jpeg";
+import nss2Img from "../assets/Assets/nss2.jpeg";
+import nss3Img from "../assets/Assets/nss3.jpeg";
+import nss4Img from "../assets/Assets/nss4.jpeg";
+import nss5Img from "../assets/Assets/nss5.jpeg";
+import nss6Img from "../assets/Assets/nss6.jpeg";
+import nss7Img from "../assets/Assets/nss7.jpeg";
+import nss8Img from "../assets/Assets/nss8.jpeg";
+import nss9Img from "../assets/Assets/nss9.jpeg";
+import nss10Img from "../assets/Assets/nss10.jpeg";
+import nss11Img from "../assets/Assets/nss11.jpeg";
+import nss12Img from "../assets/Assets/nss12.jpeg";
+import nss13Img from "../assets/Assets/nss13.jpeg";
+import nss18Img from "../assets/Assets/nss18.jpeg";
+
 // Titles + descriptions for images
 const nssPhotoData = {
   1: { title: "Yuva nidhi Drive", desc: "Special Drive for Yuva Nidhi." },
@@ -22,31 +39,27 @@ const nssPhotoData = {
   20: { title: "Annual camp", desc: "Inaugration of Annual camp of 1 week." },
   21: { title: "Cultural Dance", desc: "Traditional performances by volunteers." },
   18: { title: "Annual Camp", desc: "Annual camp food Students having lunch in annual camp." },
-  
-  
 };
 
-// Gallery items (images + video)
 const galleryItems = [
-  { type: "image", src: "/assets/nss.jpeg", ...nssPhotoData[1] },
-  { type: "image", src: "/assets/nss1.jpeg", ...nssPhotoData[2] },
-  { type: "image", src: "/assets/nss2.jpeg", ...nssPhotoData[3] },
-  { type: "image", src: "/assets/nss3.jpeg", ...nssPhotoData[4] },
-  { type: "image", src: "/assets/nss4.jpeg", ...nssPhotoData[5] },
-  { type: "image", src: "/assets/nss5.jpeg", ...nssPhotoData[6] },
-  { type: "image", src: "/assets/nss6.jpeg", ...nssPhotoData[7] },
-  { type: "image", src: "/assets/nss7.jpeg", ...nssPhotoData[8] },
-  { type: "image", src: "/assets/nss8.jpeg", ...nssPhotoData[9] },
-  { type: "image", src: "/assets/nss9.jpeg", ...nssPhotoData[10] },
-  { type: "image", src: "/assets/nss10.jpeg", ...nssPhotoData[11] },
-  { type: "image", src: "/assets/nss11.jpeg", ...nssPhotoData[12] },
-  { type: "image", src: "/assets/nss12.jpeg", ...nssPhotoData[13] },
-  { type: "image", src: "/assets/nss13.jpeg", ...nssPhotoData[14] },
-  
-  
-  { type: "image", src: "/assets/nss18.jpeg", ...nssPhotoData[19] },,
- 
+  { type: "image", src: nssImg, ...nssPhotoData[1] },
+  { type: "image", src: nss1Img, ...nssPhotoData[2] },
+  { type: "image", src: nss2Img, ...nssPhotoData[3] },
+  { type: "image", src: nss3Img, ...nssPhotoData[4] },
+  { type: "image", src: nss4Img, ...nssPhotoData[5] },
+  { type: "image", src: nss5Img, ...nssPhotoData[6] },
+  { type: "image", src: nss6Img, ...nssPhotoData[7] },
+  { type: "image", src: nss7Img, ...nssPhotoData[8] },
+  { type: "image", src: nss8Img, ...nssPhotoData[9] },
+  { type: "image", src: nss9Img, ...nssPhotoData[10] },
+  { type: "image", src: nss10Img, ...nssPhotoData[11] },
+  { type: "image", src: nss11Img, ...nssPhotoData[12] },
+  { type: "image", src: nss12Img, ...nssPhotoData[13] },
+  { type: "image", src: nss13Img, ...nssPhotoData[14] },
+  { type: "image", src: nss18Img, ...nssPhotoData[18] },
 ];
+
+// ...existing code for NSSGallery component.
 
 export default function NSSGallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -59,7 +72,6 @@ export default function NSSGallery() {
 
   const selectedMedia = selectedIndex !== null ? galleryItems[selectedIndex] : null;
 
-  // Container animation
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -68,7 +80,6 @@ export default function NSSGallery() {
     },
   };
 
-  // Card animation
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
@@ -79,7 +90,6 @@ export default function NSSGallery() {
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
         NSS Gallery
       </h1>
-
       {/* Grid Gallery */}
       <motion.div
         variants={containerVariants}
@@ -108,10 +118,8 @@ export default function NSSGallery() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0 rounded-xl border-4 border-yellow-400 pointer-events-none"
             />
-
             {/* Dashed Animated Border */}
             <div className="absolute inset-0 rounded-xl border-2 border-dashed border-yellow-500 animate-[dash_3s_linear_infinite] pointer-events-none" />
-
             {/* Media */}
             {item.type === "image" ? (
               <motion.img
@@ -131,7 +139,6 @@ export default function NSSGallery() {
                 className="w-full h-60 object-cover"
               />
             )}
-
             {/* Bottom Description Panel */}
             <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 px-3 py-2 text-center transition-all duration-300 group-hover:bg-yellow-50">
               <h3 className="text-sm font-bold text-gray-800">{item.title}</h3>
@@ -140,7 +147,6 @@ export default function NSSGallery() {
           </motion.div>
         ))}
       </motion.div>
-
       {/* Modal with AnimatePresence */}
       <AnimatePresence>
         {selectedMedia && (
@@ -166,7 +172,6 @@ export default function NSSGallery() {
                 ></span>
               ))}
             </div>
-
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -188,7 +193,6 @@ export default function NSSGallery() {
               >
                 ›
               </button>
-
               {/* Media content */}
               {selectedMedia.type === "image" ? (
                 <motion.img
@@ -212,7 +216,6 @@ export default function NSSGallery() {
                   transition={{ duration: 0.6 }}
                 />
               )}
-
               {/* Title & description in modal */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -223,7 +226,6 @@ export default function NSSGallery() {
                 <h2 className="text-xl font-bold">{selectedMedia.title}</h2>
                 <p className="text-sm font-bold glow-text mt-1">{selectedMedia.desc}</p>
               </motion.div>
-
               {/* Close button with gradient */}
               <div className="flex justify-center mt-6">
                 <button
@@ -237,7 +239,6 @@ export default function NSSGallery() {
           </motion.div>
         )}
       </AnimatePresence>
-
       {/* Custom Keyframes */}
       <style>{`
         @keyframes dash {
@@ -250,7 +251,6 @@ export default function NSSGallery() {
           background-size: 40px 2px;
           border: none;
         }
-
         @keyframes twinkle {
           0%, 100% { opacity: 0.2; transform: scale(0.8); }
           50% { opacity: 1; transform: scale(1.2); }
@@ -258,8 +258,6 @@ export default function NSSGallery() {
         .animate-twinkle {
           animation: twinkle infinite;
         }
-
-        /* Glowing animation for description text */
         @keyframes glow {
           0% { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffa500, 0 0 15px #ff8c00; }
           50% { text-shadow: 0 0 10px #ffb700, 0 0 20px #ffa500, 0 0 30px #ff8c00; }

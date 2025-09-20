@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
-import nssLogo from "../assets/NSS-logo.png";
+import nssLogo from "../assets/Assets/NSS-logo.png";
 
 export default function Footer() {
   const [showTopBtn, setShowTopBtn] = useState(false);

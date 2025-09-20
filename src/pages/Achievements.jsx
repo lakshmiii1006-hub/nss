@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react";
-import logo from "../assets/NSS-logo.png";
+import logo from "../assets/Assets/NSS-logo.png";
 import StudentProfileCarousel from "../components/StudentProfileCarousel";
 
 

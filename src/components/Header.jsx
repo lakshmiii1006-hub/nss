@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import nssLogo from "../assets/NSS-logo.png";
+import nssLogo from "../assets/Assets/NSS-logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
