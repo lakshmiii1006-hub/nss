@@ -23,12 +23,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative w-[90%] h-[100vh] mx-auto my-10 flex overflow-hidden rounded-xl shadow-lg">
-      {/* Left side: Google Maps with animated golden border */}
+    <div className="relative w-[95%] mx-auto my-8 flex flex-col md:flex-row gap-6 md:gap-0 overflow-hidden rounded-xl shadow-lg h-auto md:h-[100vh]">
+      {/* Left side: Google Maps */}
       <motion.div
         whileHover={{ scale: 1.01, boxShadow: "0 0 25px rgba(255,215,0,0.9)" }}
         whileTap={{ scale: 0.99 }}
-        className="w-1/2 h-full relative p-[3px] rounded-xl bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#8b5a2b]"
+        className="w-full md:w-1/2 h-64 md:h-full relative p-[3px] rounded-xl bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#8b5a2b]"
         aria-hidden="true"
       >
         <div className="w-full h-full rounded-xl overflow-hidden">
@@ -42,19 +42,19 @@ export default function Contact() {
         </div>
       </motion.div>
 
-      {/* Right side: Contact Form (unchanged) */}
-      <div className="w-1/2 h-full flex items-center justify-center z-10 border-l-4 border-gold shadow-[inset_4px_0_15px_rgba(255,215,0,0.5)]">
+      {/* Right side: Contact Form */}
+      <div className="w-full md:w-1/2 flex items-center justify-center z-10 border-t-4 md:border-t-0 md:border-l-4 border-gold shadow-[inset_0_4px_15px_rgba(255,215,0,0.5)] md:shadow-[inset_4px_0_15px_rgba(255,215,0,0.5)]">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-white rounded-xl w-4/5 p-8 shadow-gold-lg"
+          className="relative bg-white rounded-xl w-full max-w-md p-6 sm:p-8 shadow-gold-lg"
         >
-          <h2 className="text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#b8860b] to-[#8b5a2b]">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#b8860b] to-[#8b5a2b]">
             Drop a Message
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
             {/* Name */}
             <div>
               <label className="block text-gray-700 font-medium mb-1" htmlFor="name">
@@ -73,7 +73,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none"
+                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none text-sm sm:text-base"
                 />
               </motion.div>
             </div>
@@ -96,7 +96,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="your@email.com"
                   required
-                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none"
+                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none text-sm sm:text-base"
                 />
               </motion.div>
             </div>
@@ -114,12 +114,12 @@ export default function Contact() {
                 <MotionTextarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Write your message here..."
                   required
-                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none"
+                  className="w-full rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none text-sm sm:text-base"
                 />
               </motion.div>
             </div>
@@ -129,7 +129,7 @@ export default function Contact() {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full mt-2 bg-gradient-to-r from-[#b8860b] to-[#8b5a2b] text-white font-bold py-2 px-4 rounded-lg shadow-gold-md hover:shadow-gold-lg transition duration-300"
+              className="w-full mt-2 bg-gradient-to-r from-[#b8860b] to-[#8b5a2b] text-white font-bold py-2 px-4 rounded-lg shadow-gold-md hover:shadow-gold-lg transition duration-300 text-sm sm:text-base"
             >
               Send Message
             </motion.button>
