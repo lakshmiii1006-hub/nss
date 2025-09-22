@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import nssLogo from "../assets/Assets/NSS-logo.png";
 
 export default function Footer() {
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const location = useLocation(); // Get the current location (URL)
+
+  useEffect(() => {
+    // Scroll to top whenever the page changes (location changes)
+    window.scrollTo(0, 0);
+  }, [location]); // Run whenever location changes
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +23,9 @@ export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  // Function to apply active class based on current location
+  const isActiveLink = (path) => location.pathname === path ? 'underline text-white' : '';
 
   return (
     <footer className="bg-gradient-to-r from-[#b8860b] to-[#8b5a2b] text-white mt-10 relative">
@@ -40,13 +49,12 @@ export default function Footer() {
         <div className="flex flex-col items-center px-2">
           <h3 className="text-xl font-bold mb-2">Quick Links</h3>
           <ul className="space-y-1 text-center">
-            <li><Link to="/" className="hover:underline hover:text-[#ffd700] text-base">Home</Link></li>
-            <li><Link to="/about" className="hover:underline hover:text-[#ffd700] text-base">About</Link></li>
-            <li><Link to="/activities" className="hover:underline hover:text-[#ffd700] text-base">Activities</Link></li>
-            <li><Link to="/achievements" className="hover:underline hover:text-[#ffd700] text-base">Achievements</Link></li>
-            <li><Link to="/gallery" className="hover:underline hover:text-[#ffd700] text-base">Gallery</Link></li>
-            <li><Link to="/contact" className="hover:underline hover:text-[#ffd700] text-base">Contact</Link></li>
-           
+            <li><Link to="/" className={`hover:text-[#ffd700] text-base ${isActiveLink('/')}`}>Home</Link></li>
+            <li><Link to="/about" className={`hover:text-[#ffd700] text-base ${isActiveLink('/about')}`}>About</Link></li>
+            <li><Link to="/activities" className={`hover:text-[#ffd700] text-base ${isActiveLink('/activities')}`}>Activities</Link></li>
+            <li><Link to="/achievements" className={`hover:text-[#ffd700] text-base ${isActiveLink('/achievements')}`}>Achievements</Link></li>
+            <li><Link to="/gallery" className={`hover:text-[#ffd700] text-base ${isActiveLink('/gallery')}`}>Gallery</Link></li>
+            <li><Link to="/contact" className={`hover:text-[#ffd700] text-base ${isActiveLink('/contact')}`}>Contact</Link></li>
           </ul>
         </div>
 
@@ -84,7 +92,7 @@ export default function Footer() {
       {showTopBtn && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-orange-600 hover:bg-orange-700 p-3 rounded-full shadow-lg text-white z-50 transition-transform transform hover:scale-110"
+          className="fixed bottom-5 right-5 bg-gradient-to-r from-[#ffd700] via-[#ffcc00] to-[#b8860b] hover:scale-110 p-3 rounded-full shadow-lg text-white z-50 transition-transform"
           aria-label="Back to Top"
         >
           <FaArrowUp />

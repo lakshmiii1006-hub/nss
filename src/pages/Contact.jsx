@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
-// Motion components
 const MotionInput = motion.input;
 const MotionTextarea = motion.textarea;
 
 export default function Contact() {
+  const formRef = useRef();
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
   });
 
@@ -18,8 +20,24 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your message has been sent.`);
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .sendForm(
+        "service_z95i7jg",   // Your Service ID
+        "template_c2ukkhp",  // Your Template ID
+        formRef.current,
+        "5ga69pcO0Tg6HgYk8"  // Your Public Key
+      )
+      .then(
+        (result) => {
+          alert(`Thank you, ${formData.user_name}! Your message has been sent.`);
+          setFormData({ user_name: "", user_email: "", message: "" });
+        },
+        (error) => {
+          alert("Oops! Something went wrong. Please try again.");
+          console.error(error.text);
+        }
+      );
   };
 
   return (
@@ -54,10 +72,10 @@ export default function Contact() {
             Drop a Message
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-gray-700 font-medium mb-1" htmlFor="name">
+              <label className="block text-gray-700 font-medium mb-1" htmlFor="user_name">
                 Name
               </label>
               <motion.div
@@ -66,10 +84,10 @@ export default function Contact() {
                 className="p-[2px] rounded-lg bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#8b5a2b]"
               >
                 <MotionInput
-                  id="name"
-                  name="name"
+                  id="user_name"
+                  name="user_name"
                   type="text"
-                  value={formData.name}
+                  value={formData.user_name}
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
@@ -80,7 +98,7 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label className="block text-gray-700 font-medium mb-1" htmlFor="email">
+              <label className="block text-gray-700 font-medium mb-1" htmlFor="user_email">
                 Email
               </label>
               <motion.div
@@ -89,10 +107,10 @@ export default function Contact() {
                 className="p-[2px] rounded-lg bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#8b5a2b]"
               >
                 <MotionInput
-                  id="email"
-                  name="email"
+                  id="user_email"
+                  name="user_email"
                   type="email"
-                  value={formData.email}
+                  value={formData.user_email}
                   onChange={handleChange}
                   placeholder="your@email.com"
                   required

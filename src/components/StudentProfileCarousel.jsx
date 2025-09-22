@@ -85,7 +85,7 @@ function StudentProfileCarousel() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-[#fffaf0] dark:bg-[#2a2a2a] p-8 rounded-xl border border-[#e6c173]/60 shadow-lg text-center"
+          className="bg-[#fffaf0] p-8 rounded-xl border border-[#e6c173]/60 shadow-lg text-center"
         >
           <div className="mb-6">
             <img
@@ -95,13 +95,11 @@ function StudentProfileCarousel() {
             />
           </div>
 
-          <h2 className="text-2xl font-bold text-[#8b5a2b] dark:text-yellow-300 mb-1">
-            {student.name}
-          </h2>
-          <p className="italic text-gray-600 dark:text-gray-400">{student.years}</p>
-          <p className="font-semibold mb-4 text-gray-800 dark:text-gray-300">{student.course}</p>
+          <h2 className="text-2xl font-bold text-[#8b5a2b] mb-1">{student.name}</h2>
+          <p className="italic text-gray-600">{student.years}</p>
+          <p className="font-semibold mb-4 text-gray-800">{student.course}</p>
 
-          <ul className="text-left list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 max-h-40 overflow-y-auto px-4">
+          <ul className="text-left list-disc list-inside text-gray-700 space-y-1 max-h-40 overflow-y-auto px-4">
             {student.achievements.map((ach, i) => (
               <li key={i}>{ach}</li>
             ))}
@@ -127,4 +125,5 @@ function StudentProfileCarousel() {
     </section>
   );
 }
+
 export default StudentProfileCarousel;
